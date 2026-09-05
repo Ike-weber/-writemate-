@@ -87,14 +87,6 @@ export default function Header() {
             </Link>
           ))}
           <ButtonLink
-            href="/docs"
-            text="View Docs"
-            className={cn(
-              buttonVariants({ variant: "ghost" }),
-              "font-mono -tracking-[0.2px]",
-            )}
-          />
-          <ButtonLink
             href={DASHBOARD_URL}
             text="View Dashboard"
             className={cn(
@@ -146,15 +138,6 @@ export default function Header() {
             </div>
 
             <div className="flex flex-col gap-3">
-              <ButtonLink
-                href="/docs"
-                text="View Docs"
-                onClick={() => setOpen(false)}
-                className={cn(
-                  buttonVariants({ variant: "outline" }),
-                  "w-full font-mono -tracking-[0.2px] rounded-none",
-                )}
-              />
               <ButtonLink
                 href={DASHBOARD_URL}
                 text="View Dashboard"
