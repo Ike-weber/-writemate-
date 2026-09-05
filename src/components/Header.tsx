@@ -1,13 +1,13 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { MenuToggleIcon } from "@/components/ui/menu-toggle-icon";
 import { useScroll } from "@/components/ui/use-scroll";
 import { cn } from "@/lib/utils";
+import TripwireMark from "./TripwireMark";
 import ButtonLink from "./ButtonLink";
 
 const NAV = [
@@ -65,15 +65,11 @@ export default function Header() {
           { "md:px-4": scrolled },
         )}
       >
-        <Link href="/" aria-label="WriteMate AI">
-          <Image
-            src="/images/logo.svg"
-            alt="WriteMate AI Logo"
-            width={155}
-            height={28}
-            priority
-            className="h-5 w-auto"
-          />
+        <Link href="/" aria-label="Tripwire" className="flex items-center gap-2.5">
+          <TripwireMark className="size-6 text-white" />
+          <span className="text-white text-lg font-medium -tracking-[0.4px]">
+            Tripwire
+          </span>
         </Link>
 
         <div className="hidden items-center gap-2 md:flex">

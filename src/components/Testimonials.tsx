@@ -4,32 +4,34 @@ import { motion } from "motion/react";
 
 type Testimonial = {
   name: string;
-  handle: string;
+  /** A role, not a social handle: an invented @handle can collide with a real
+   *  account, and these quotes are illustrative. */
+  role: string;
   quote: string;
 };
 
 const ROW_ONE: Testimonial[] = [
   {
     name: "Lydia Carter",
-    handle: "@lyd_carter21",
+    role: "Marketing Lead",
     quote:
       "Using this AI tool has transformed the way I approach my marketing campaigns. Efficiency has skyrocketed!",
   },
   {
     name: "Marcus Thompson",
-    handle: "@m_thompson",
+    role: "Founder",
     quote:
       "The best investment I've made for my business. The AI generates content that truly resonates with my audience.",
   },
   {
     name: "Sarah Mitchell",
-    handle: "@sarah_m",
+    role: "Content Strategist",
     quote:
       "I was skeptical at first, but this tool exceeded all my expectations. My productivity has doubled!",
   },
   {
     name: "James Wilson",
-    handle: "@j_wilson",
+    role: "Head of Growth",
     quote:
       "This AI tool is a game-changer for content creators. Highly recommend for anyone looking to streamline their workflow.",
   },
@@ -38,25 +40,25 @@ const ROW_ONE: Testimonial[] = [
 const ROW_TWO: Testimonial[] = [
   {
     name: "Emily Davis",
-    handle: "@emily_d",
+    role: "Operations Lead",
     quote:
       "Incredible tool that has saved me countless hours. The AI suggestions are spot-on and very helpful.",
   },
   {
     name: "David Brown",
-    handle: "@d_brown",
+    role: "Product Marketer",
     quote:
       "A must-have for anyone in digital marketing. The results speak for themselves!",
   },
   {
     name: "Jessica Taylor",
-    handle: "@jess_t",
+    role: "Editorial Manager",
     quote:
       "I love how intuitive this tool is. It has completely changed my content creation process.",
   },
   {
     name: "Michael Johnson",
-    handle: "@mike_j",
+    role: "Treasury Manager",
     quote:
       "Fantastic AI tool that delivers consistent results. My team productivity has increased significantly.",
   },
@@ -72,7 +74,7 @@ function initials(name: string): string {
     .toUpperCase();
 }
 
-function Card({ name, handle, quote }: Testimonial) {
+function Card({ name, role, quote }: Testimonial) {
   return (
     <li className="p-6 border border-white/10 bg-white/3 min-w-[420px]">
       <div className="flex gap-3 items-center mb-2">
@@ -84,7 +86,7 @@ function Card({ name, handle, quote }: Testimonial) {
         </div>
         <div>
           <h4 className="text-xl text-white font-medium">{name}</h4>
-          <span className="text-zinc-400 text-base">{handle}</span>
+          <span className="text-zinc-400 text-base">{role}</span>
         </div>
       </div>
       <div>

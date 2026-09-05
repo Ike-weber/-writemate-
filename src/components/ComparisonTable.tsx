@@ -78,7 +78,7 @@ export default function ComparisonTable() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-4xl mb-6 font-medium text-white"
             >
-              WriteMate AI Pricing
+              Tripwire Pricing
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

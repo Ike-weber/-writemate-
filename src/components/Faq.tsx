@@ -5,9 +5,9 @@ import { AnimatePresence, motion } from "motion/react";
 
 const FAQS = [
   {
-    question: "What is Writemate AI?",
+    question: "What is Tripwire?",
     answer:
-      "Writemate AI is an advanced writing assistant that uses artificial intelligence to help you create compelling content faster. Whether you need blog posts, emails, social media content, or marketing copy, our AI helps you write better.",
+      "Tripwire is an advanced writing assistant that uses artificial intelligence to help you create compelling content faster. Whether you need blog posts, emails, social media content, or marketing copy, our AI helps you write better.",
   },
   {
     question: "How does the AI writing assistant work?",
@@ -15,7 +15,7 @@ const FAQS = [
       "Our AI analyzes your input and context to generate relevant, high-quality content. Simply provide a prompt or topic, and the AI will create content tailored to your needs, tone, and style preferences.",
   },
   {
-    question: "Can I try Writemate AI for free?",
+    question: "Can I try Tripwire for free?",
     answer:
       "Yes! We offer a free Starter plan that lets you explore our AI writing capabilities. You can upgrade to Plus or Premium plans for more features and higher usage limits.",
   },
@@ -109,7 +109,7 @@ export default function Faq() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 className="text-base text-white/80 mb-6"
               >
-                Find answers to common questions about Writemate AI. If you
+                Find answers to common questions about Tripwire. If you
                 can&apos;t find what you&apos;re looking for, feel free to
                 contact our support team.
               </motion.p>

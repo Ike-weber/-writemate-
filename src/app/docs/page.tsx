@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import DocsContent from "@/components/DocsContent";
 
 export const metadata: Metadata = {
-  title: "Documentation - WriteMate AI | Complete Guide",
+  title: "Documentation — Tripwire",
   description:
-    "Complete documentation and guides for WriteMate AI. Learn how to use all features, integrations, and advanced tools.",
+    "Complete documentation and guides for Tripwire. Setup, policy reference, and integrations.",
 };
 
 const NAV_GROUPS = [
@@ -68,7 +68,7 @@ export default function DocsPage() {
                     Need Help?
                   </h3>
                   <a href="#" className="text-sm text-white/60">
-                    support@writemate.example
+                    support@tripwire.example
                   </a>
                 </div>
               </aside>

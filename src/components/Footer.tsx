@@ -63,7 +63,7 @@ export default function Footer() {
 
         <div className="pt-4 pb-8 border-t flex flex-col sm:flex-row gap-5 justify-between border-white/20">
           <p className="text-zinc-400 text-sm leading-5 transition">
-            &copy; {new Date().getFullYear()} Writemate AI. All rights reserved.
+            &copy; {new Date().getFullYear()} Tripwire. All rights reserved.
           </p>
           <div className="flex gap-4 items-center">
             <Link

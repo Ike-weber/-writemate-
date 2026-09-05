@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "404 - Page Not Found | WriteMate AI",
+  title: "404 — Page Not Found | Tripwire",
   description:
-    "The page you're looking for couldn't be found. Return to the homepage and explore WriteMate AI.",
+    "The page you're looking for couldn't be found. Return to the homepage.",
 };
 
 export default function NotFound() {

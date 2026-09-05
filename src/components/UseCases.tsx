@@ -58,7 +58,7 @@ export default function UseCases() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-3xl sm:text-4xl mb-6 font-medium text-white"
             >
-              Writemate AI Use Cases
+              Tripwire Use Cases
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

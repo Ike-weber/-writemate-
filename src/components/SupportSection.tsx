@@ -20,7 +20,7 @@ export default function SupportSection() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="mb-6 text-4xl text-white font-medium"
               >
-                WriteMate AI Support
+                Tripwire Support
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}

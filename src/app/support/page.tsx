@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import SupportSection from "@/components/SupportSection";
 
 export const metadata: Metadata = {
-  title: "Support - WriteMate AI | Get Help & FAQs",
+  title: "Support — Tripwire",
   description:
-    "Get quick answers and support from our expert team. Browse FAQs and contact us for assistance with WriteMate AI.",
+    "Get quick answers and support from our team. Browse FAQs or contact us about Tripwire.",
 };
 
 export default function SupportPage() {

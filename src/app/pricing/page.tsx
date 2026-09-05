@@ -7,9 +7,9 @@ import Cta from "@/components/Cta";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Pricing - WriteMate AI | Affordable Plans for All",
+  title: "Pricing — Tripwire",
   description:
-    "Choose the perfect WriteMate AI plan for your content creation needs. Flexible pricing starting from as low as you need.",
+    "Choose the Tripwire plan that fits how much you need to protect.",
 };
 
 export default function PricingPage() {

@@ -8,16 +8,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "WriteMate AI - Content Creation at Its Best",
+  title: "Tripwire",
   description:
-    "Supercharge your content creation with AI-driven design, copy, images, and SEO optimization. Edit visually, publish, or export clean HTML/CSS.",
-  icons: { icon: "/favicon.png" },
+    "Tripwire checks every transaction before it executes — spending limits, a cooling-off delay, or an emergency freeze, configured in plain English.",
   openGraph: {
     type: "website",
     title:
-      "WriteMate AI - React AI Website Template for Multi-LLM Content Platforms",
+      "Tripwire",
     description:
-      "AI website template for AI writing tools, content, and chatbot platforms. Includes features, pricing, docs, support, Use Cases, and testimonials sections.",
+      "Tripwire checks every transaction before it executes — spending limits, a cooling-off delay, or an emergency freeze, configured in plain English.",
   },
 };
 
