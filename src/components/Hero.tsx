@@ -1,13 +1,17 @@
 "use client";
 
 import { motion } from "motion/react";
+import AsciiField from "./AsciiField";
 import ButtonLink from "./ButtonLink";
 import { DASHBOARD_URL } from "@/lib/links";
 
 export default function Hero() {
   return (
     <section className="border-y border-white/20 overflow-hidden relative">
+      {/* The ASCII field sits furthest back; the bloom washes over it, and the
+          copy sits above both on z-20. */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <AsciiField className="absolute inset-0 block h-full w-full" />
         <div className="bloom bloom-hero" />
       </div>
 
