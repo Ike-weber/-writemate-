@@ -12,19 +12,23 @@ export const metadata: Metadata = {
 const NAV_GROUPS = [
   {
     title: "Getting Started",
-    links: ["Introduction", "Quickstart: First Project", "Setup & API Key"],
+    links: ["Introduction", "Protecting your first Safe", "Configuration"],
   },
   {
-    title: "Core Features",
-    links: ["Blog writer", "Social Generator", "Email Writer", "SEO Tools"],
+    title: "Protection",
+    links: ["Spending limits", "Cooling-off delays", "Emergency freeze"],
   },
   {
-    title: "Intergrations",
-    links: ["Notion", "Wordpress", "Shopify"],
+    title: "Risk engine",
+    links: ["Signals", "Fork simulation", "Reasoning pass"],
   },
   {
-    title: "Billing & Account",
-    links: ["Billing", "Rate Limit"],
+    title: "Policy",
+    links: ["Natural-language policy", "Policy reference"],
+  },
+  {
+    title: "Operations",
+    links: ["Running it yourself", "Audit trail"],
   },
 ];
 

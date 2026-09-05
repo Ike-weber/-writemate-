@@ -29,9 +29,8 @@ export default function SupportSection() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 className="text-theme-dark-50"
               >
-                Supercharge your content creation with AI-driven design, copy,
-                images, and SEO optimization. Edit visually, publish, or export
-                clean HTML/CSS.
+                Questions about setting a policy, reading a verdict, or running
+                the engine yourself. We answer them.
               </motion.p>
             </div>
 
@@ -50,7 +49,7 @@ export default function SupportSection() {
                       Get Quick Answer
                     </h3>
                     <p className="text-base text-white/80 mb-8">
-                      For teams seeking advanced AI support features
+                      Setup, policy syntax, and what each verdict means
                     </p>
                     <ButtonLink
                       href="/docs"
@@ -74,7 +73,7 @@ export default function SupportSection() {
                       Contact Support
                     </h2>
                     <p className="text-base text-white/80">
-                      Get personalized assistance from our expert support team.
+                      Tell us what you are protecting and where you are stuck.
                     </p>
                   </div>
 

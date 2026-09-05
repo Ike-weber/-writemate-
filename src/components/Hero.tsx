@@ -3,6 +3,16 @@
 import { motion } from "motion/react";
 import ButtonLink from "./ButtonLink";
 
+/** The whole product in one line: what happens to a transaction. */
+const PIPELINE = [
+  "Transaction",
+  "Monitor",
+  "Analyze",
+  "Risk score",
+  "Policy",
+  "Allow / Delay / Block",
+];
+
 export default function Hero() {
   return (
     <section className="border-y border-white/20 overflow-hidden relative">
@@ -20,7 +30,7 @@ export default function Hero() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-4xl lg:text-5xl -tracking-[1.5px] xl:text-6xl font-normal text-white text-center xl:leading-16 mb-6"
             >
-              Write Better. Reply Faster. Understand Anything with AI.
+              Protect every transaction before it becomes irreversible.
             </motion.h1>
 
             <motion.p
@@ -28,10 +38,11 @@ export default function Hero() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="text-white/80 text-base max-w-lg text-center mx-auto mb-8 xl:mb-14"
+              className="text-white/80 text-base max-w-2xl text-center mx-auto mb-10"
             >
-              Your all-in-one AI writing platform — generate copy, summarize
-              PDFs, write emails, and transform tone instantly.
+              Tripwire is a smart-contract financial guardian. It monitors wallet
+              activity, detects suspicious transactions, evaluates risk, and
+              enforces the protection you configured &mdash; before funds move.
             </motion.p>
 
             <motion.div
@@ -39,37 +50,44 @@ export default function Hero() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-              className="relative max-w-[500px] mx-auto"
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-14"
             >
-              <input
-                type="text"
-                aria-label="Prompt"
-                className="text-sm text-white placeholder:text-white/60 p-8 pl-6 pr-20 bg-theme-dark-500 h-16 w-full focus:outline-0"
-                placeholder="Write a linkedin post about a new AI tool..."
+              <ButtonLink
+                href="/docs"
+                text="Explore the Guardian"
+                className="bg-white px-6 py-3.5 text-theme-dark-500 transition-all duration-300 text-base hover:bg-white/90 font-mono"
               />
-              <div className="absolute right-2 size-12 top-1/2 -translate-y-1/2 z-10">
-                <ButtonLink
-                  aria-label="Generate"
-                  className="bg-white size-12 hover:bg-gray-100 transition duration-300"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M11.9961 3.99902L11.9961 20.0004M6 9.99502L11.9998 3.99902L18 9.99502"
-                      stroke="#060606"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </ButtonLink>
-              </div>
+              <ButtonLink
+                href="#architecture"
+                text="View Architecture"
+                className="text-white bg-white/5 ring ring-white/40 py-3.5 px-6 text-base font-mono transition-all duration-300 hover:bg-white/10"
+              />
             </motion.div>
+
+            <motion.ol
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+              className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-mono text-xs uppercase tracking-[0.1em]"
+            >
+              {PIPELINE.map((stage, i) => (
+                <li key={stage} className="flex items-center gap-3">
+                  <span
+                    className={
+                      i === PIPELINE.length - 1 ? "text-white" : "text-white/55"
+                    }
+                  >
+                    {stage}
+                  </span>
+                  {i < PIPELINE.length - 1 && (
+                    <span aria-hidden="true" className="text-white/25">
+                      &rarr;
+                    </span>
+                  )}
+                </li>
+              ))}
+            </motion.ol>
           </div>
         </div>
       </div>

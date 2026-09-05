@@ -19,7 +19,7 @@ export default function Cta() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-white text-5xl text-center mb-4"
         >
-          Ready to write 10&times; faster?
+          Nothing leaves the wallet unchecked.
         </motion.h2>
 
         <motion.p
@@ -29,7 +29,7 @@ export default function Cta() {
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
           className="mb-8 text-white text-center"
         >
-          Create a professional website in minutes &mdash; no coding, no hassle.
+          Open source, self-hostable, and enforced on-chain. Built for secure financial operations on XDC Network.
         </motion.p>
 
         <motion.div
@@ -41,12 +41,12 @@ export default function Cta() {
         >
           <ButtonLink
             href="/pricing"
-            text="Start for free"
+            text="Explore the Guardian"
             className="bg-white px-6 py-3 text-theme-dark-500 transition-all duration-300 w-auto text-base hover:bg-white/90 font-mono inline-flex items-center justify-center"
           />
           <ButtonLink
             href="/docs"
-            text="Explore templates"
+            text="View architecture"
             className="text-white bg-white/5 border py-3 border-white/40 transition-all duration-300 hover:bg-white/50 px-6 w-auto text-base inline-flex items-center justify-center"
           />
         </motion.div>

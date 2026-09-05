@@ -1,7 +1,10 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import WhatYouGet from "@/components/WhatYouGet";
-import UseCases from "@/components/UseCases";
+import Architecture from "@/components/Architecture";
+import RiskExamples from "@/components/RiskExamples";
+import AiSection from "@/components/AiSection";
+import Roadmap from "@/components/Roadmap";
 import PricingCards from "@/components/PricingCards";
 import Testimonials from "@/components/Testimonials";
 import Faq from "@/components/Faq";
@@ -14,7 +17,10 @@ export default function Home() {
       <Header />
       <Hero />
       <WhatYouGet />
-      <UseCases />
+      <Architecture />
+      <RiskExamples />
+      <AiSection />
+      <Roadmap />
       <PricingCards />
       <Testimonials />
       <Faq />

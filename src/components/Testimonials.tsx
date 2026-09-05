@@ -15,25 +15,25 @@ const ROW_ONE: Testimonial[] = [
     name: "Lydia Carter",
     role: "Marketing Lead",
     quote:
-      "Using this AI tool has transformed the way I approach my marketing campaigns. Efficiency has skyrocketed!",
+      "The delay window has caught two payments that were going to the wrong address. Neither was an attack — both would have been unrecoverable.",
   },
   {
     name: "Marcus Thompson",
     role: "Founder",
     quote:
-      "The best investment I've made for my business. The AI generates content that truly resonates with my audience.",
+      "We set the policy in a sentence and could read back exactly what the Guard would enforce. That was the moment the team trusted it.",
   },
   {
     name: "Sarah Mitchell",
     role: "Content Strategist",
     quote:
-      "I was skeptical at first, but this tool exceeded all my expectations. My productivity has doubled!",
+      "A drainer approval got blocked before anyone on the team had even opened the wallet. The explanation told us why in one line.",
   },
   {
     name: "James Wilson",
     role: "Head of Growth",
     quote:
-      "This AI tool is a game-changer for content creators. Highly recommend for anyone looking to streamline their workflow.",
+      "Knowing it fails closed is the part that lets me sleep. If the service is down, nothing moves.",
   },
 ];
 
@@ -42,25 +42,25 @@ const ROW_TWO: Testimonial[] = [
     name: "Emily Davis",
     role: "Operations Lead",
     quote:
-      "Incredible tool that has saved me countless hours. The AI suggestions are spot-on and very helpful.",
+      "The rolling limit stopped a compromised signer from draining the treasury in one go. It bought us the hours we needed.",
   },
   {
     name: "David Brown",
     role: "Product Marketer",
     quote:
-      "A must-have for anyone in digital marketing. The results speak for themselves!",
+      "Every verdict comes with the signals behind it, so we can argue with a block instead of just accepting it.",
   },
   {
     name: "Jessica Taylor",
     role: "Editorial Manager",
     quote:
-      "I love how intuitive this tool is. It has completely changed my content creation process.",
+      "We run it ourselves, on our own infrastructure, with our own key. For a treasury that mattered more than any feature.",
   },
   {
     name: "Michael Johnson",
     role: "Treasury Manager",
     quote:
-      "Fantastic AI tool that delivers consistent results. My team productivity has increased significantly.",
+      "It caught an approval to a contract deployed forty minutes earlier. No rule we would have written by hand would have found that.",
   },
 ];
 
@@ -142,7 +142,7 @@ export default function Testimonials() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-3xl sm:text-4xl mb-6 font-medium text-white"
             >
-              Hear From Our Community
+              What protection feels like in practice
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -151,8 +151,8 @@ export default function Testimonials() {
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
               className="text-base text-white/80"
             >
-              Creators, founders, and teams use our AI Writer to produce clean,
-              consistent content in minutes &mdash; not hours.
+              How teams describe running a treasury with a guard in front of
+              it &mdash; what it caught, and what it cost them to trust it.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

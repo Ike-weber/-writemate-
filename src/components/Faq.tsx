@@ -7,27 +7,32 @@ const FAQS = [
   {
     question: "What is Tripwire?",
     answer:
-      "Tripwire is an advanced writing assistant that uses artificial intelligence to help you create compelling content faster. Whether you need blog posts, emails, social media content, or marketing copy, our AI helps you write better.",
+      "A security layer for wallets that hold real money. It watches transactions as they are proposed, scores them for risk, and enforces the protection you configured — a spending limit, a cooling-off delay, or a freeze — at the smart-contract layer, before funds move.",
   },
   {
-    question: "How does the AI writing assistant work?",
+    question: "How is this different from a wallet warning?",
     answer:
-      "Our AI analyzes your input and context to generate relevant, high-quality content. Simply provide a prompt or topic, and the AI will create content tailored to your needs, tone, and style preferences.",
+      "A warning can be clicked through. Tripwire runs as a Guard on the wallet itself, so when it says no the transaction reverts on-chain. The decision is not advisory.",
   },
   {
-    question: "Can I try Tripwire for free?",
+    question: "What happens if your backend goes down?",
     answer:
-      "Yes! We offer a free Starter plan that lets you explore our AI writing capabilities. You can upgrade to Plus or Premium plans for more features and higher usage limits.",
+      "The Guard fails closed. A transaction with no recorded verdict is blocked, never allowed, and the spending limits are enforced on-chain independently of the risk engine. An outage makes Tripwire stricter, not weaker.",
   },
   {
-    question: "What types of content can I create?",
+    question: "Does an AI model decide whether my funds move?",
     answer:
-      "You can create blog posts, social media content, email copy, marketing materials, product descriptions, SEO content, and much more. Our AI is versatile and adapts to various content types.",
+      "No. The model reads context and writes the explanation attached to a verdict. Deterministic rules and the on-chain Guard make every decision that touches funds, and the pipeline produces the same verdict if the model is unavailable.",
   },
   {
-    question: "Is my data secure?",
+    question: "Which wallets does it support?",
     answer:
-      "Yes, we use industry-standard encryption and comply with GDPR and CCPA. Your documents are processed securely and never stored without permission.",
+      "Safe wallets, which is where the enforcement hook exists — Tripwire attaches as a Zodiac Guard. Support for other wallet standards is on the roadmap, not built.",
+  },
+  {
+    question: "Can I write my own policy?",
+    answer:
+      "Yes, in plain English. \"Allow payments below $500 to addresses I have paid before, delay everything else an hour, freeze anything above $10,000\" compiles into the exact Guard configuration, and you see it rendered back before anything is activated.",
   },
 ];
 
@@ -109,9 +114,8 @@ export default function Faq() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 className="text-base text-white/80 mb-6"
               >
-                Find answers to common questions about Tripwire. If you
-                can&apos;t find what you&apos;re looking for, feel free to
-                contact our support team.
+                How the protection works, what happens when things fail, and
+                where the limits are. If something is missing, ask us.
               </motion.p>
             </div>
 

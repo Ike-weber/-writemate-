@@ -6,7 +6,8 @@ import CheckIcon from "./CheckIcon";
 
 type Plan = {
   plan: string;
-  price: number;
+  /** null where no price is set yet — the page says so rather than inventing one. */
+  price: number | null;
   period: string;
   subtext: string;
   features: string[];
@@ -15,41 +16,41 @@ type Plan = {
 
 const PLANS: Plan[] = [
   {
-    plan: "Starter",
+    plan: "Self-hosted",
     price: 0,
     period: "free",
-    subtext: "For individuals exploring the power of AI-driven content",
+    subtext: "Run the whole stack yourself. Open source, no seat count.",
     features: [
-      "AI-powered content suggestions",
-      "Basic grammar and spell check",
-      "Standard tone adjustments",
+      "Guard, Risk Registry and risk engine",
+      "Spending limits, delays and emergency freeze",
+      "Natural-language policy compiler",
+      "Auditable decision trail",
     ],
     featured: false,
   },
   {
-    plan: "Plus",
-    price: 29,
-    period: "per month",
-    subtext: "For freelancers and small teams seeking advanced AI tools",
+    plan: "Managed",
+    price: null,
+    period: "in development",
+    subtext: "Hosted monitoring and relaying, so you do not operate the engine.",
     features: [
-      "AI-powered content suggestions",
-      "Basic grammar and spell check",
-      "Standard tone adjustments",
-      "Priority support",
+      "Everything in self-hosted",
+      "Hosted watcher and verdict relayer",
+      "Alerting on verdicts and enforcement",
+      "Managed key custody",
     ],
     featured: true,
   },
   {
-    plan: "Premium",
-    price: 99,
-    period: "per month",
-    subtext: "For large teams and enterprises requiring dedicated support",
+    plan: "Organisation",
+    price: null,
+    period: "talk to us",
+    subtext: "For treasuries and teams with their own review process.",
     features: [
-      "AI-powered content suggestions",
-      "Basic grammar and spell check",
-      "Standard tone adjustments",
-      "Priority support",
-      "Dedicated account manager",
+      "Everything in managed",
+      "Multiple wallets under one policy set",
+      "Custom signals and policy review",
+      "Support commitments",
     ],
     featured: false,
   },
@@ -79,12 +80,18 @@ function PlanCard({
         <p className="text-white/80 text-base">{subtext}</p>
 
         <div className="py-6 flex items-end gap-1">
-          <span className="text-white/80 text-4xl">$</span>
-          <h3 className="text-white text-6xl leading-none">{price}</h3>
-          <p>
+          {price === null ? (
+            <h3 className="text-white text-4xl leading-none">&mdash;</h3>
+          ) : (
+            <>
+              <span className="text-white/80 text-4xl">$</span>
+              <h3 className="text-white text-6xl leading-none">{price}</h3>
+            </>
+          )}
+          <p className="ml-2">
             <span className="text-white block">{period}</span>
             <span className="text-white/60 block">
-              {price === 0 ? "forever" : "billed annually"}
+              {price === 0 ? "forever" : "pricing not set"}
             </span>
           </p>
         </div>
@@ -93,13 +100,13 @@ function PlanCard({
           {featured ? (
             <ButtonLink
               href="/pricing"
-              text="Start for free"
+              text="Register interest"
               className="bg-white px-6 py-3 text-theme-dark-500 transition-all duration-300 w-full text-base hover:bg-white/90 font-mono inline-flex items-center justify-center"
             />
           ) : (
             <ButtonLink
               href="/pricing"
-              text={price === 0 ? "Get Started" : "Contact Us"}
+              text={price === 0 ? "Read the docs" : "Contact us"}
               className="text-white bg-white/5 border py-3 w-full border-white/40 transition-all duration-300 hover:bg-white/10 px-6 text-base font-mono inline-flex items-center justify-center"
             />
           )}
@@ -135,7 +142,7 @@ export default function PricingCards() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-3xl sm:text-4xl mb-6 font-medium text-white"
               >
-                Plans &amp; Pricing
+                Plans
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -144,9 +151,9 @@ export default function PricingCards() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 className="text-base text-white/80"
               >
-                Supercharge your content creation with AI-driven design, copy,
-                images, and SEO optimization. Edit visually, publish, or export
-                clean HTML/CSS.
+                Tripwire is open source and free to self-host. The hosted tiers
+                are still in development, so their pricing is not set &mdash;
+                the page will say so until it is.
               </motion.p>
             </div>
           </div>

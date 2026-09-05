@@ -6,54 +6,108 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import type { Swiper as SwiperClass } from "swiper";
 import "swiper/css";
-import ButtonLink from "./ButtonLink";
 
-const ICON_PATHS = [
-  "M17.25 13.75C26.6388 13.75 34.25 21.3612 34.25 30.75C34.25 40.1388 26.6388 47.75 17.25 47.75C7.8612 47.75 0.25 40.1388 0.25 30.75C0.25 21.3612 7.8612 13.75 17.25 13.75ZM47.75 0.25V47.75H34.75V13.25H0.25V0.25H47.75Z",
-  "M5.25 0.25C15.4672 0.25 23.75 8.53282 23.75 18.75H24.25C24.25 8.53282 32.5328 0.25 42.75 0.25H47.75V47.75H0.25V0.25H5.25ZM5.25 24.25C15.4672 24.25 23.75 32.5328 23.75 42.75H24.25C24.25 32.5328 32.5328 24.25 42.75 24.25V23.75H5.25V24.25Z",
-  "M17.25 13.75C26.6388 13.75 34.25 21.3612 34.25 30.75C34.25 40.1388 26.6388 47.75 17.25 47.75C7.8612 47.75 0.25 40.1388 0.25 30.75C0.25 21.3612 7.8612 13.75 17.25 13.75ZM47.75 0.25V47.75H34.75V13.25H0.25V0.25H47.75Z",
-  "M26.75 47.75H5.77832L26.75 26.7783V47.75ZM47.75 0.25V38.791L37.75 47.4512V10.25H0.543945L9.11523 0.25H47.75ZM16.7217 21.25L0.25 37.7217V21.25H16.7217Z",
+/**
+ * The six capabilities Tripwire actually ships today. Each maps to a real part
+ * of the implementation — the icons are abstract geometry rather than literal
+ * pictograms, matching the rest of the site's hairline treatment.
+ */
+const FEATURES = [
+  {
+    title: "Real-time transaction monitoring",
+    description:
+      "Watches Safe wallet transactions from the moment one is proposed, while it is still pending signatures — before it can execute.",
+    icon: (
+      <>
+        <circle cx="24" cy="24" r="6" />
+        <circle cx="24" cy="24" r="14" strokeOpacity="0.55" />
+        <circle cx="24" cy="24" r="22" strokeOpacity="0.25" />
+      </>
+    ),
+  },
+  {
+    title: "Risk-based protection",
+    description:
+      "Scores each transaction on amount, recipient history, contract reputation and the function being called, producing one decision with its reasons attached.",
+    icon: (
+      <>
+        <path d="M2 40 L14 26 L24 33 L34 14 L46 6" />
+        <path d="M2 46 H46" strokeOpacity="0.35" />
+      </>
+    ),
+  },
+  {
+    title: "Spending limits",
+    description:
+      "A per-transaction ceiling and a rolling 24-hour cap, held in the Guard's own storage. Anything over the line does not execute.",
+    icon: (
+      <>
+        <rect x="2" y="14" width="44" height="20" />
+        <path d="M14 14 V34" strokeOpacity="0.5" />
+        <path d="M34 14 V34" strokeOpacity="0.5" />
+      </>
+    ),
+  },
+  {
+    title: "Cooling-off delays",
+    description:
+      "High-risk transactions enter a timed hold instead of executing. The window is the chance to review, and to cancel before it fires.",
+    icon: (
+      <>
+        <circle cx="24" cy="24" r="20" />
+        <path d="M24 12 V24 L33 30" />
+      </>
+    ),
+  },
+  {
+    title: "Emergency freeze",
+    description:
+      "One switch stops every outgoing call from the wallet. The risk engine can trip it; only the owner can lift it.",
+    icon: (
+      <>
+        <path d="M24 4 V44" />
+        <path d="M6 14 L42 34" strokeOpacity="0.6" />
+        <path d="M42 14 L6 34" strokeOpacity="0.6" />
+      </>
+    ),
+  },
+  {
+    title: "On-chain enforcement",
+    description:
+      "Decisions are written to the Risk Registry and read by the Tripwire Guard at execution time. Enforcement lives in the contract, not the dashboard.",
+    icon: (
+      <>
+        <rect x="4" y="4" width="18" height="18" />
+        <rect x="26" y="26" width="18" height="18" />
+        <path d="M22 13 H36 V26" strokeOpacity="0.55" />
+      </>
+    ),
+  },
 ];
 
-const TOOLS = [
-  "AI Blog Writer",
-  "Social Post Generator",
-  "SEO Content Writer",
-  "Email Writer",
-].map((title, i) => ({
-  title,
-  path: ICON_PATHS[i],
-  description: "Fully WCAG 2.0 compliant, made with best a11y practices",
-}));
-
-// Loop mode needs more slides than `slidesPerView` (3.5 at xl), so the four
-// tools are rendered twice.
-const SLIDES = [...TOOLS, ...TOOLS];
-
-function ToolCard({
-  path,
+function FeatureCard({
   title,
   description,
-}: {
-  path: string;
-  title: string;
-  description: string;
-}) {
+  icon,
+}: (typeof FEATURES)[number]) {
   return (
     <div className="p-8 border border-white/20 group duration-300 ease-in-out hover:border-white/60 transition-all relative overflow-hidden h-full">
       <div className="relative z-10">
         <div className="mb-6">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-            <path d={path} stroke="white" strokeWidth="0.5" />
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 48 48"
+            fill="none"
+            stroke="white"
+            strokeWidth="0.75"
+            aria-hidden="true"
+          >
+            {icon}
           </svg>
         </div>
         <h3 className="text-white mb-3 text-2xl -tracking-[1px]">{title}</h3>
-        <p className="text-base text-white/80 mb-14">{description}</p>
-        <ButtonLink
-          href="/pricing"
-          text="Try now"
-          className="ring px-6 ring-white/40 bg-white/5 transition duration-300 hover:bg-white/10 text-white font-mono w-auto py-3 text-base inline-flex"
-        />
+        <p className="text-base text-white/80">{description}</p>
       </div>
       <div className="bloom bloom-corner-br opacity-0 group-hover:opacity-100 transition duration-300" />
     </div>
@@ -76,7 +130,7 @@ export default function WhatYouGet() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-3xl sm:text-4xl mb-6 font-medium text-white"
               >
-                What You Get
+                What Tripwire does
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -85,9 +139,8 @@ export default function WhatYouGet() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 className="text-base text-white/80"
               >
-                Describe your idea &mdash; the AI creates pages, layout, copy,
-                images and SEO meta. Edit visually, publish or export clean
-                HTML/CSS.
+                Six controls, configured in advance, enforced at the contract
+                layer. Nothing here depends on a user noticing a warning in time.
               </motion.p>
             </div>
 
@@ -141,13 +194,13 @@ export default function WhatYouGet() {
               }}
               breakpoints={{
                 640: { slidesPerView: 1 },
-                1024: { slidesPerView: 1.5 },
-                1280: { slidesPerView: 3.5 },
+                1024: { slidesPerView: 2 },
+                1280: { slidesPerView: 3 },
               }}
             >
-              {SLIDES.map((tool, i) => (
-                <SwiperSlide key={`${tool.title}-${i}`} className="h-auto">
-                  <ToolCard {...tool} />
+              {FEATURES.map((feature) => (
+                <SwiperSlide key={feature.title} className="h-auto">
+                  <FeatureCard {...feature} />
                 </SwiperSlide>
               ))}
             </Swiper>

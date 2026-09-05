@@ -4,7 +4,7 @@ const GROUPS = [
   {
     title: "Product",
     links: [
-      { label: "Tools", href: "/" },
+      { label: "How it works", href: "/#architecture" },
       { label: "Pricing", href: "/pricing" },
       { label: "Documentation", href: "/docs" },
     ],
@@ -12,9 +12,9 @@ const GROUPS = [
   {
     title: "Resources",
     links: [
-      { label: "Getting Started", href: "/docs" },
-      { label: "API Reference", href: "/docs" },
-      { label: "Help Center", href: "/support" },
+      { label: "Getting started", href: "/docs" },
+      { label: "Policy reference", href: "/docs" },
+      { label: "Support", href: "/support" },
     ],
   },
   {

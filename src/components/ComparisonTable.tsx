@@ -5,64 +5,50 @@ import ButtonLink from "./ButtonLink";
 
 const PLANS = [
   {
-    name: "Free",
-    price: 0,
-    period: "free",
-    subtext: "forever",
-    buttonText: "Get Started",
+    name: "Self-hosted",
+    price: "Free",
+    period: "open source",
+    subtext: "run it yourself",
+    buttonText: "Read the docs",
     featured: false,
   },
   {
-    name: "Plus",
-    price: 29,
-    period: "per month",
-    subtext: "billed annually",
-    buttonText: "Start Free Trial",
+    name: "Managed",
+    price: "—",
+    period: "in development",
+    subtext: "pricing not set",
+    buttonText: "Register interest",
     featured: true,
   },
   {
-    name: "Pro",
-    price: 99,
-    period: "per month",
-    subtext: "billed annually",
-    buttonText: "Get Started",
+    name: "Organisation",
+    price: "—",
+    period: "talk to us",
+    subtext: "pricing not set",
+    buttonText: "Contact us",
     featured: false,
   },
 ];
 
 const ROWS: { name: string; values: React.ReactNode[] }[] = [
+  { name: "Tripwire Guard + Risk Registry", values: ["Yes", "Yes", "Yes"] },
+  { name: "Spending limits (per-tx + rolling 24h)", values: ["Yes", "Yes", "Yes"] },
+  { name: "Cooling-off delays", values: ["Yes", "Yes", "Yes"] },
+  { name: "Emergency freeze", values: ["Yes", "Yes", "Yes"] },
+  { name: "Rule-engine risk scoring", values: ["Yes", "Yes", "Yes"] },
+  { name: "Fork simulation", values: ["Yes", "Yes", "Yes"] },
+  { name: "Natural-language policy", values: ["Yes", "Yes", "Yes"] },
+  { name: "Auditable decision trail", values: ["Yes", "Yes", "Yes"] },
   {
-    name: "AI Model Access",
-    values: [
-      <>
-        Limited Access
-        <br />
-        <span className="text-sm text-white/60">(Zephyr, Claude, Llama)</span>
-      </>,
-      "All Models",
-      "All Models",
-    ],
+    name: "Who runs the engine",
+    values: ["You", "Hosted", "Hosted"],
   },
-  { name: "Words", values: ["5,000", "50,000", "Unlimited"] },
-  { name: "Word Limit", values: ["500K / month", "5M", "Unlimited"] },
   {
-    name: "Image Upload",
-    values: ["—", "Unlimited Storage", "Unlimited (100MB)"],
+    name: "Verdict relayer key",
+    values: ["Yours to hold", "Managed", "Managed"],
   },
-  { name: "Content History", values: ["14 Days", "180 Days", "365 Days"] },
-  { name: "Team Seats", values: ["—", "Up to 15", "Up to 50"] },
-  { name: "Shared Folders", values: ["—", "5 Folders", "Unlimited"] },
-  { name: "Custom API Key", values: ["—", "—", "Yes"] },
-  {
-    name: "Real-Time Data",
-    values: ["—", "Trend Analysis", "Priority (Expert)"],
-  },
-  { name: "Generation Speed", values: ["Normal", "Faster", "Instant"] },
-  {
-    name: "Monthly Word Limit",
-    values: ["Standard", "5X Word Limit", "Unlimited"],
-  },
-  { name: "Customer Service", values: ["Online", "Email (12hr)", "Priority"] },
+  { name: "Wallets covered", values: ["Unlimited, self-run", "Planned", "Planned"] },
+  { name: "Support", values: ["Community", "Planned", "Planned"] },
 ];
 
 export default function ComparisonTable() {
@@ -87,9 +73,9 @@ export default function ComparisonTable() {
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
               className="text-base text-white/80"
             >
-              Use the power of AI to generate high-quality content for your
-              blog, website, or social media. Create compelling copy, articles,
-              and marketing materials with ease.
+              Every protection control is in the open-source tier. The hosted
+              tiers differ in who operates the engine and holds the relayer key,
+              not in what the Guard enforces.
             </motion.p>
           </div>
 
@@ -116,8 +102,7 @@ export default function ComparisonTable() {
                           {plan.name}
                         </h3>
                         <div className="py-6 flex items-end gap-1 font-normal">
-                          <span className="text-white/80 text-4xl">$</span>
-                          <h3 className="text-white text-6xl font-normal leading-none">
+                          <h3 className="text-white text-5xl font-normal leading-none">
                             {plan.price}
                           </h3>
                           <div className="ml-2">
