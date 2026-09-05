@@ -1,10 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "motion/react";
 
 type Testimonial = {
-  avatar: string;
   name: string;
   handle: string;
   quote: string;
@@ -12,28 +10,24 @@ type Testimonial = {
 
 const ROW_ONE: Testimonial[] = [
   {
-    avatar: "/images/testimonial/avatar-1.png",
     name: "Lydia Carter",
     handle: "@lyd_carter21",
     quote:
       "Using this AI tool has transformed the way I approach my marketing campaigns. Efficiency has skyrocketed!",
   },
   {
-    avatar: "/images/testimonial/avatar-2.png",
     name: "Marcus Thompson",
     handle: "@m_thompson",
     quote:
       "The best investment I've made for my business. The AI generates content that truly resonates with my audience.",
   },
   {
-    avatar: "/images/testimonial/avatar-3.png",
     name: "Sarah Mitchell",
     handle: "@sarah_m",
     quote:
       "I was skeptical at first, but this tool exceeded all my expectations. My productivity has doubled!",
   },
   {
-    avatar: "/images/testimonial/avatar-4.png",
     name: "James Wilson",
     handle: "@j_wilson",
     quote:
@@ -43,28 +37,24 @@ const ROW_ONE: Testimonial[] = [
 
 const ROW_TWO: Testimonial[] = [
   {
-    avatar: "/images/testimonial/avatar-3.png",
     name: "Emily Davis",
     handle: "@emily_d",
     quote:
       "Incredible tool that has saved me countless hours. The AI suggestions are spot-on and very helpful.",
   },
   {
-    avatar: "/images/testimonial/avatar-4.png",
     name: "David Brown",
     handle: "@d_brown",
     quote:
       "A must-have for anyone in digital marketing. The results speak for themselves!",
   },
   {
-    avatar: "/images/testimonial/avatar-1.png",
     name: "Jessica Taylor",
     handle: "@jess_t",
     quote:
       "I love how intuitive this tool is. It has completely changed my content creation process.",
   },
   {
-    avatar: "/images/testimonial/avatar-2.png",
     name: "Michael Johnson",
     handle: "@mike_j",
     quote:
@@ -72,18 +62,25 @@ const ROW_TWO: Testimonial[] = [
   },
 ];
 
-function Card({ avatar, name, handle, quote }: Testimonial) {
+/** Initials, so nobody's likeness is attached to a quote they did not give. */
+function initials(name: string): string {
+  return name
+    .split(/\s+/)
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+}
+
+function Card({ name, handle, quote }: Testimonial) {
   return (
     <li className="p-6 border border-white/10 bg-white/3 min-w-[420px]">
       <div className="flex gap-3 items-center mb-2">
-        <div>
-          <Image
-            src={avatar}
-            alt={name}
-            width={48}
-            height={48}
-            className="size-12 rounded-full"
-          />
+        <div
+          aria-hidden="true"
+          className="size-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white/70 font-mono text-sm shrink-0"
+        >
+          {initials(name)}
         </div>
         <div>
           <h4 className="text-xl text-white font-medium">{name}</h4>
@@ -154,6 +151,15 @@ export default function Testimonials() {
             >
               Creators, founders, and teams use our AI Writer to produce clean,
               consistent content in minutes &mdash; not hours.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+              className="text-xs font-mono uppercase tracking-[0.12em] text-white/40 mt-6"
+            >
+              Sample content &mdash; illustrative, not real customer quotes
             </motion.p>
           </div>
 

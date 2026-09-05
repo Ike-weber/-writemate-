@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -32,14 +31,40 @@ export default function NotFound() {
                   Back to Homepage
                 </Link>
               </div>
-              <div className="-mt-30 lg:-mt-60 relative z-10">
-                <Image
-                  src="/images/404.png"
-                  alt="404 illustration"
-                  width={1440}
-                  height={695}
-                  className="w-full h-auto"
-                />
+              {/* The template shipped this as a 2.2 MB PNG of a glowing "404".
+                  Same treatment, drawn as type over a CSS bloom: sharp at any
+                  size, no asset to license, nothing to download. */}
+              <div
+                className="relative z-10 h-[26vw] max-h-[300px] min-h-[150px]"
+                aria-hidden="true"
+              >
+                <div className="bloom bloom-404" />
+                <svg
+                  viewBox="0 0 600 240"
+                  className="relative w-full h-full"
+                  role="presentation"
+                >
+                  <defs>
+                    <linearGradient id="nf-fill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#ffffff" stopOpacity="0.16" />
+                      <stop offset="100%" stopColor="#ffffff" stopOpacity="0.03" />
+                    </linearGradient>
+                  </defs>
+                  <text
+                    x="300"
+                    y="182"
+                    textAnchor="middle"
+                    fontSize="220"
+                    fontWeight="700"
+                    letterSpacing="6"
+                    fill="url(#nf-fill)"
+                    stroke="rgb(255 255 255 / 0.28)"
+                    strokeWidth="1.5"
+                    style={{ fontFamily: "var(--font-sans)" }}
+                  >
+                    404
+                  </text>
+                </svg>
               </div>
             </div>
           </div>

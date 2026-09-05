@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Clients from "@/components/Clients";
 import WhatYouGet from "@/components/WhatYouGet";
 import UseCases from "@/components/UseCases";
 import PricingCards from "@/components/PricingCards";
@@ -14,7 +13,6 @@ export default function Home() {
     <div className="antialiased bg-theme-dark">
       <Header />
       <Hero />
-      <Clients />
       <WhatYouGet />
       <UseCases />
       <PricingCards />

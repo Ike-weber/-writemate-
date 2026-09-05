@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "motion/react";
 import ButtonLink from "./ButtonLink";
 
@@ -45,14 +44,7 @@ export default function SupportSection() {
                 className="sm:w-5/12"
               >
                 <div className="border border-white/20 py-8 px-6 relative h-full">
-                  <div className="absolute top-0 left-0 pointer-events-none">
-                    <Image
-                      src="/images/shape-5.png"
-                      alt=""
-                      width={464}
-                      height={204}
-                    />
-                  </div>
+                  <div className="bloom bloom-corner-tl" />
                   <div className="relative z-10">
                     <h3 className="text-white font-medium text-lg mb-1">
                       Get Quick Answer

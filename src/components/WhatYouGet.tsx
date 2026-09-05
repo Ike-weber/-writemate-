@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useRef } from "react";
 import { motion } from "motion/react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -56,13 +55,7 @@ function ToolCard({
           className="ring px-6 ring-white/40 bg-white/5 transition duration-300 hover:bg-white/10 text-white font-mono w-auto py-3 text-base inline-flex"
         />
       </div>
-      <Image
-        src="/images/shape-3.png"
-        alt="Decorative shape"
-        width={314}
-        height={265}
-        className="absolute -bottom-14 right-0 w-full h-full opacity-0 group-hover:opacity-100 transition duration-300"
-      />
+      <div className="bloom bloom-corner-br opacity-0 group-hover:opacity-100 transition duration-300" />
     </div>
   );
 }

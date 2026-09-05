@@ -1,20 +1,13 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "motion/react";
 import ButtonLink from "./ButtonLink";
 
 export default function Hero() {
   return (
     <section className="border-y border-white/20 overflow-hidden relative">
-      <div className="absolute left-1/2 -translate-x-1/2 pointer-events-none w-full h-full">
-        <Image
-          src="/images/Gradient.png"
-          alt=""
-          fill
-          priority
-          className="object-cover"
-        />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="bloom bloom-hero" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-20">

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import PricingCards from "@/components/PricingCards";
-import Clients from "@/components/Clients";
 import ComparisonTable from "@/components/ComparisonTable";
 import Faq from "@/components/Faq";
 import Cta from "@/components/Cta";
@@ -18,7 +17,6 @@ export default function PricingPage() {
     <div className="antialiased bg-theme-dark">
       <Header />
       <PricingCards />
-      <Clients />
       <ComparisonTable />
       <Faq />
       <Cta />

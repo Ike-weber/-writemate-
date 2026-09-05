@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "motion/react";
 import ButtonLink from "./ButtonLink";
 import CheckIcon from "./CheckIcon";
@@ -68,14 +67,7 @@ function PlanCard({
     <article className="min-h-135 flex flex-col py-8 px-6 border border-white/20 bg-white/3 relative overflow-hidden">
       {featured && (
         <>
-          <div className="absolute top-0 right-0">
-            <Image
-              src="/images/shape-price.png"
-              alt="Decorative shape"
-              width={363}
-              height={283}
-            />
-          </div>
+          <div className="bloom bloom-corner-tr" />
           <span className="absolute z-20 top-6 right-6 px-3 py-1 bg-linear-to-b from-white to-transparent border border-white/40 text-theme-dark-500 font-mono rounded-md text-sm font-medium">
             Most Popular
           </span>
