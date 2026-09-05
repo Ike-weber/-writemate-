@@ -13,7 +13,6 @@ import { DASHBOARD_URL } from "@/lib/links";
 
 const NAV = [
   { label: "Home", href: "/" },
-  { label: "Pricing", href: "/pricing" },
   { label: "Docs", href: "/docs" },
   { label: "Support", href: "/support" },
 ];

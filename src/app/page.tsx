@@ -6,7 +6,6 @@ import Architecture from "@/components/Architecture";
 import RiskExamples from "@/components/RiskExamples";
 import AiSection from "@/components/AiSection";
 import Roadmap from "@/components/Roadmap";
-import PricingCards from "@/components/PricingCards";
 import Testimonials from "@/components/Testimonials";
 import Faq from "@/components/Faq";
 import Cta from "@/components/Cta";
@@ -23,7 +22,6 @@ export default function Home() {
       <RiskExamples />
       <AiSection />
       <Roadmap />
-      <PricingCards />
       <Testimonials />
       <Faq />
       <Cta />
