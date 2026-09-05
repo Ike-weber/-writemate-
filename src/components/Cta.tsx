@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import ButtonLink from "./ButtonLink";
+import { DASHBOARD_URL } from "@/lib/links";
 import RibbonField from "./RibbonField";
 
 export default function Cta() {
@@ -40,13 +41,13 @@ export default function Cta() {
           className="flex flex-col sm:flex-row gap-6 justify-center"
         >
           <ButtonLink
-            href="/pricing"
-            text="Explore the Guardian"
+            href={DASHBOARD_URL}
+            text="Open the Dashboard"
             className="bg-white px-6 py-3 text-theme-dark-500 transition-all duration-300 w-auto text-base hover:bg-white/90 font-mono inline-flex items-center justify-center"
           />
           <ButtonLink
             href="/docs"
-            text="View architecture"
+            text="View docs"
             className="text-white bg-white/5 border py-3 border-white/40 transition-all duration-300 hover:bg-white/50 px-6 w-auto text-base inline-flex items-center justify-center"
           />
         </motion.div>

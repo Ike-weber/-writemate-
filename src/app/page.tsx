@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Pipeline from "@/components/Pipeline";
 import WhatYouGet from "@/components/WhatYouGet";
 import Architecture from "@/components/Architecture";
 import RiskExamples from "@/components/RiskExamples";
@@ -16,6 +17,7 @@ export default function Home() {
     <div className="antialiased bg-theme-dark">
       <Header />
       <Hero />
+      <Pipeline />
       <WhatYouGet />
       <Architecture />
       <RiskExamples />

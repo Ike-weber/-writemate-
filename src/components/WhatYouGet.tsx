@@ -123,6 +123,16 @@ export default function WhatYouGet() {
         <div className="border-x border-white/20 p-5 lg:p-20">
           <div className="flex flex-col sm:flex-row justify-between gap-5 lg:items-end mb-16">
             <div className="lg:max-w-xl">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="font-mono text-xs uppercase tracking-[0.12em] text-white/50 mb-4 flex items-center gap-2.5"
+              >
+                <span aria-hidden="true" className="size-1.5 rounded-full bg-white" />
+                Available now
+              </motion.p>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -139,8 +149,9 @@ export default function WhatYouGet() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 className="text-base text-white/80"
               >
-                Six controls, configured in advance, enforced at the contract
-                layer. Nothing here depends on a user noticing a warning in time.
+                Six controls that exist in the codebase today, configured in
+                advance and enforced at the contract layer. Nothing here depends
+                on a user noticing a warning in time.
               </motion.p>
             </div>
 

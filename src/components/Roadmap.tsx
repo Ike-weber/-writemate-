@@ -109,7 +109,7 @@ export default function Roadmap() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-3xl sm:text-4xl mb-6 font-medium text-white"
             >
-              Built, and being built
+              What exists, and what is planned
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -118,7 +118,9 @@ export default function Roadmap() {
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
               className="text-base text-white/80"
             >
-              What exists in the repository today, and what does not yet.
+              The left column is running code you can read in the repository.
+              The right column is not built yet, and is listed so it is not
+              mistaken for something that is.
             </motion.p>
           </div>
 
@@ -130,8 +132,8 @@ export default function Roadmap() {
             className="border border-white/20"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-white/20">
-              <Column label="Shipped" tone="shipped" items={SHIPPED} />
-              <Column label="Planned" tone="planned" items={PLANNED} />
+              <Column label="Implemented today" tone="shipped" items={SHIPPED} />
+              <Column label="Planned — not built" tone="planned" items={PLANNED} />
             </div>
           </motion.div>
         </div>

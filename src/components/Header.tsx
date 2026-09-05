@@ -9,6 +9,7 @@ import { useScroll } from "@/components/ui/use-scroll";
 import { cn } from "@/lib/utils";
 import TripwireMark from "./TripwireMark";
 import ButtonLink from "./ButtonLink";
+import { DASHBOARD_URL } from "@/lib/links";
 
 const NAV = [
   { label: "Home", href: "/" },
@@ -87,16 +88,16 @@ export default function Header() {
             </Link>
           ))}
           <ButtonLink
-            href="/pricing"
-            text="Login"
+            href="/docs"
+            text="View Docs"
             className={cn(
               buttonVariants({ variant: "ghost" }),
               "font-mono -tracking-[0.2px]",
             )}
           />
           <ButtonLink
-            href="/pricing"
-            text="Start for free"
+            href={DASHBOARD_URL}
+            text="View Dashboard"
             className={cn(
               buttonVariants(),
               "font-mono -tracking-[0.2px] rounded-none",
@@ -147,8 +148,8 @@ export default function Header() {
 
             <div className="flex flex-col gap-3">
               <ButtonLink
-                href="/pricing"
-                text="Login"
+                href="/docs"
+                text="View Docs"
                 onClick={() => setOpen(false)}
                 className={cn(
                   buttonVariants({ variant: "outline" }),
@@ -156,8 +157,8 @@ export default function Header() {
                 )}
               />
               <ButtonLink
-                href="/pricing"
-                text="Start for free"
+                href={DASHBOARD_URL}
+                text="View Dashboard"
                 onClick={() => setOpen(false)}
                 className={cn(
                   buttonVariants(),

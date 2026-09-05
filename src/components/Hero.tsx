@@ -2,16 +2,7 @@
 
 import { motion } from "motion/react";
 import ButtonLink from "./ButtonLink";
-
-/** The whole product in one line: what happens to a transaction. */
-const PIPELINE = [
-  "Transaction",
-  "Monitor",
-  "Analyze",
-  "Risk score",
-  "Policy",
-  "Allow / Delay / Block",
-];
+import { DASHBOARD_URL } from "@/lib/links";
 
 export default function Hero() {
   return (
@@ -50,44 +41,20 @@ export default function Hero() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center mb-14"
+              className="flex flex-col sm:flex-row gap-4 justify-center"
             >
               <ButtonLink
-                href="/docs"
-                text="Explore the Guardian"
+                href={DASHBOARD_URL}
+                text="Open the Dashboard"
                 className="bg-white px-6 py-3.5 text-theme-dark-500 transition-all duration-300 text-base hover:bg-white/90 font-mono"
               />
               <ButtonLink
-                href="#architecture"
-                text="View Architecture"
+                href="/docs"
+                text="View Docs"
                 className="text-white bg-white/5 ring ring-white/40 py-3.5 px-6 text-base font-mono transition-all duration-300 hover:bg-white/10"
               />
             </motion.div>
 
-            <motion.ol
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-              className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-mono text-xs uppercase tracking-[0.1em]"
-            >
-              {PIPELINE.map((stage, i) => (
-                <li key={stage} className="flex items-center gap-3">
-                  <span
-                    className={
-                      i === PIPELINE.length - 1 ? "text-white" : "text-white/55"
-                    }
-                  >
-                    {stage}
-                  </span>
-                  {i < PIPELINE.length - 1 && (
-                    <span aria-hidden="true" className="text-white/25">
-                      &rarr;
-                    </span>
-                  )}
-                </li>
-              ))}
-            </motion.ol>
           </div>
         </div>
       </div>
